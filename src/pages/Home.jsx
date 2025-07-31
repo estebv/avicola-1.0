@@ -1,19 +1,18 @@
-// src/pages/Home.jsx
-import React from "react";
 import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
-    <div className="p-6 text-center">
-      <h1 className="text-3xl font-bold mb-4">Bienvenido a La Reina Huevo</h1>
-      <p className="mb-6 text-gray-600">
-        Sistema de gestión avícola: galpones, aves, producción y más.
+    <div className="min-h-screen bg-gradient-to-br from-green-100 to-white flex flex-col items-center justify-center text-center px-4">
+      <h1 className="text-4xl md:text-5xl font-bold text-green-800 mb-4">
+        Bienvenido a La Reina 🐔
+      </h1>
+      <p className="text-gray-600 text-lg mb-6 max-w-md">
+        Administra tus galpones, aves y producción de huevos de forma fácil y rápida.
       </p>
-      <Link
-        to="/dashboard"
-        className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
-      >
-        Ir al Dashboard
+      <Link to="/dashboard">
+        <button className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg transition">
+          Ir al Dashboard
+        </button>
       </Link>
     </div>
   );

@@ -1,25 +1,27 @@
-
 // src/App.jsx
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import './styles/styles.css';
+import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Dashboard from "./pages/Dashboard";
-import Galpon from "./components/Galpon";
-import Aves from "./components/Aves";
-import Huevos from "./components/Huevos";
-// ... importa los demás componentes
+
 
 function App() {
   return (
-    <Router>
+    <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/galpones" element={<Galpon />} />
-        <Route path="/aves" element={<Aves />} />
-        <Route path="/huevos" element={<Huevos />} />
-        {/* ... las demás rutas */}
+        <Route path="/Navbar" element={<Navbar />} />
+      
+        <Route
+       
+        />
+
+        {/* catch-all */}
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
-    </Router>
+    </BrowserRouter>
   );
 }
 

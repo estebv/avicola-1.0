@@ -1,48 +1,51 @@
-// src/pages/Dashboard.jsx
-import React from "react";
+import Navbar from "../components/Navbar";
 
 const Dashboard = () => {
-  const stats = [
-    { title: "Total Aves", value: 1200, color: "bg-blue-500" },
-    { title: "Huevos Hoy", value: 350, color: "bg-yellow-500" },
-    { title: "Mortalidad", value: 5, color: "bg-red-500" },
-    { title: "Consumo Alimento (kg)", value: 75, color: "bg-green-500" },
-  ];
-
   return (
-    <div className="p-6">
-      <h1 className="text-3xl font-bold mb-6">Dashboard</h1>
+    <div className="min-h-screen bg-gray-50">
+      <Navbar />
 
-      {/* Tarjetas */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {stats.map((item, index) => (
-          <div
-            key={index}
-            className={`p-6 rounded-2xl shadow-lg text-white ${item.color}`}
-          >
-            <h2 className="text-lg font-semibold">{item.title}</h2>
-            <p className="text-2xl font-bold mt-2">{item.value}</p>
+      <main className="p-6">
+        <h1 className="text-2xl font-bold text-gray-800 mb-6">Dashboard</h1>
+
+        {/* Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-6">
+          <div className="bg-white shadow-md rounded-xl p-4">
+            <h2 className="text-sm text-gray-500">Total Galpones</h2>
+            <p className="text-2xl font-bold text-green-600">4</p>
           </div>
-        ))}
-      </div>
-
-      {/* Sección rápida de navegación */}
-      <div className="mt-10">
-        <h2 className="text-xl font-bold mb-4">Módulos</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {["Galpones", "Aves", "Huevos", "Alimentos", "Vacunación"].map(
-            (mod, idx) => (
-              <div
-                key={idx}
-                className="p-5 border rounded-xl shadow hover:bg-gray-100 cursor-pointer transition"
-              >
-                <h3 className="text-lg font-semibold">{mod}</h3>
-                <p className="text-sm text-gray-600">Ver detalles de {mod}</p>
-              </div>
-            )
-          )}
+          <div className="bg-white shadow-md rounded-xl p-4">
+            <h2 className="text-sm text-gray-500">Aves Registradas</h2>
+            <p className="text-2xl font-bold text-blue-600">320</p>
+          </div>
+          <div className="bg-white shadow-md rounded-xl p-4">
+            <h2 className="text-sm text-gray-500">Huevos Hoy</h2>
+            <p className="text-2xl font-bold text-yellow-600">890</p>
+          </div>
         </div>
-      </div>
+
+        {/* Tabla simulada o lista */}
+        <div className="bg-white shadow-md rounded-xl p-4">
+          <h2 className="text-lg font-semibold text-gray-700 mb-4">Actividad reciente</h2>
+          <ul className="divide-y divide-gray-200">
+            <li className="py-2 flex justify-between text-sm">
+              <span>Ingreso de 30 aves</span>
+              <span className="text-gray-500">Hace 3 horas</span>
+            </li>
+            <li className="py-2 flex justify-between text-sm">
+              <span>Recolección de huevos en Galpón 2</span>
+              <span className="text-gray-500">Hoy</span>
+            </li>
+          </ul>
+        </div>
+
+        {/* Botón de agregar */}
+        <div className="mt-6 flex justify-end">
+          <button className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition">
+            + Agregar Registro
+          </button>
+        </div>
+      </main>
     </div>
   );
 };

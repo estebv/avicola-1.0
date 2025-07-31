@@ -1,12 +1,12 @@
+// src/components/Navbar.jsx
 import { Link } from "react-router-dom";
-import "../styles/Navbar.css";
 
-const Navbar = () => {
+function Navbar() {
   return (
     <nav className="navbar">
-      <div className="navbar-logo">La Reina</div>
-      <ul className="navbar-links">
-        <li><Link to="/">Inicio</Link></li>
+      <h1 className="logo">La Reina Huevo</h1>
+      <ul>
+        <li><Link to="/">Home</Link></li>
         <li><Link to="/dashboard">Dashboard</Link></li>
         <li><Link to="/galpones">Galpones</Link></li>
         <li><Link to="/aves">Aves</Link></li>
@@ -14,6 +14,6 @@ const Navbar = () => {
       </ul>
     </nav>
   );
-};
+}
 
 export default Navbar;
